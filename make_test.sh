@@ -3,6 +3,11 @@
 qemu-aarch64 ./make/bin/test_main open open.txt
 cat open.txt
 
-echo "-------------------"
 # 2.标准输出
+echo "-------------------"
 qemu-aarch64 ./make/bin/test_main write
+
+# 3. 文件lseek测试
+echo "-------------------"
+qemu-aarch64 ./make/bin/test_main lseek
+cat test.txt
