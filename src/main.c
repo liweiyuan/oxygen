@@ -15,6 +15,8 @@ int mini_main(int argc, char *argv[]) {
     return handle_open_command(argc, argv);
   } else if (string_compare(argv[1], "write") == 0) {
     return handle_write_command(argc, argv);
+  } else if (string_compare(argv[1], "lseek") == 0) {
+    return handle_lseek_command();
   } else {
     print_error("Unknown command");
     return 1;

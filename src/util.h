@@ -20,4 +20,7 @@ void print_args(int argc, char *argv[]);
 int handle_open_command(int argc, char *argv[]);
 int handle_write_command(int argc, char *argv[]);
 
+// 文件lseek命令处理函数声明
+int handle_lseek_command();
+
 #endif

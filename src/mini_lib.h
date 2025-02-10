@@ -10,6 +10,8 @@
 #define O_TRUNC 00001000
 #define O_APPEND 00002000
 
+enum { SEEK_SET = 0, SEEK_CUR, SEEK_END };
+
 // 文件操作函数声明
 int mini_write(int fd, const void *buf, int count);
 
@@ -18,5 +20,8 @@ int mini_open(const char *pathname, int flags, int mode);
 
 // 文件关闭函数声明
 int mini_close(int fd);
+
+// lseek 函数声明
+int mini_lseek(int fd, int offset, int whence);
 
 #endif

@@ -16,4 +16,7 @@ echo "Cleaning the open.txt..."
 # Remove all the files that are not needed
 rm -rf $current_dir/open.txt
 
+echo "Cleaning the test.txt..."
+rm -rf $current_dir/test.txt
+
 echo "Cleaning Successful!"

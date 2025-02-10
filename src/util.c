@@ -123,3 +123,29 @@ int handle_write_command(int argc, char *argv[]) {
   mini_write(1, "hello\n", 6);
   return 0;
 }
+
+int handle_lseek_command() {
+  // 测试 lseek 函数
+  int fd = mini_open("test.txt", O_CREAT | O_RDWR, 0644);
+  if (fd < 0) {
+    print_error("open");
+    return 1;
+  }
+  // 写入内容
+  char buf[10] = "hello";
+  mini_write(fd, buf, 5);
+  // 移动文件指针
+  int offset = 2;
+  int whence = SEEK_SET;
+  int result = mini_lseek(fd, offset, whence);
+  if (result < 0) {
+    print_error("lseek");
+    return 1;
+  }
+  // 再次写入内容
+  char buf2[10] = "world";
+  mini_write(fd, buf2, 5);
+  // 关闭文件
+  mini_close(fd);
+  return 0;
+}
