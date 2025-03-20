@@ -23,4 +23,7 @@ int handle_write_command(int argc, char *argv[]);
 // 文件lseek命令处理函数声明
 int handle_lseek_command();
 
+// 文件mmap命令处理函数声明
+int handle_mmap_command();
+
 #endif

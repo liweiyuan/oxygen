@@ -19,4 +19,7 @@ rm -rf $current_dir/open.txt
 echo "Cleaning the test.txt..."
 rm -rf $current_dir/test.txt
 
+echo "Cleaning the map.txt..."
+rm -rf $current_dir/map.txt
+
 echo "Cleaning Successful!"

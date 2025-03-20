@@ -16,7 +16,7 @@ ASM_OBJS = $(patsubst $(SRC_DIR)/%.S, $(OBJ_DIR)/%.o, $(ASM_SRCS))
 
 # 每个目标文件对应的 C 源文件
 SRC_TEST_MINI_LIB = $(SRC_DIR)/test_mini_lib.c
-SRC_TEST_MAIN = $(SRC_DIR)/util.c $(SRC_DIR)/write.c $(SRC_DIR)/open.c $(SRC_DIR)/close.c  $(SRC_DIR)/lseek.c $(SRC_DIR)/main.c
+SRC_TEST_MAIN = $(SRC_DIR)/util.c $(SRC_DIR)/write.c $(SRC_DIR)/open.c $(SRC_DIR)/close.c  $(SRC_DIR)/lseek.c ${SRC_DIR}/mmap.c $(SRC_DIR)/main.c
 
 # 将 C 源文件转换为目标文件
 OBJ_TEST_MINI_LIB = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_TEST_MINI_LIB))

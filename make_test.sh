@@ -11,3 +11,8 @@ qemu-aarch64 ./make/bin/test_main write
 echo "-------------------"
 qemu-aarch64 ./make/bin/test_main lseek
 cat test.txt
+
+# 4. 文件mmap测试
+echo "-------------------"
+qemu-aarch64 ./build/bin/test_main mmap
+cat map.txt

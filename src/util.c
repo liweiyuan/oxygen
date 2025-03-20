@@ -149,3 +149,36 @@ int handle_lseek_command() {
   mini_close(fd);
   return 0;
 }
+
+int handle_mmap_command() {
+
+  // 创建文件
+  int fd = mini_open("map.txt", O_CREAT | O_RDWR, 0644);
+  if (fd < 0) {
+    print_error("open");
+    return 1;
+  }
+
+  // 测试 mmap 函数
+  void *addr =
+      mini_mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
+  if (addr == MAP_FAILED) {
+    print_error("mmap");
+    return 1;
+  }
+  // 写入内容
+  char buf[10] = "mmap";
+  mini_write(fd, buf, 4);
+
+  // 从mmap读数据
+  char *mapped = (char *)addr;
+  print_string("mapped: ");
+  print_string(mapped);
+  print_string("\n");
+
+  // 解除映射
+  mini_munmap(addr, 4096);
+  // 关闭文件
+  mini_close(fd);
+  return 0;
+}

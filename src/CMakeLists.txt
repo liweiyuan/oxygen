@@ -39,7 +39,7 @@ set(TARGETS
 
 # 定义每个目标对应的 C 源文件
 set(TEST_MINI_LIB_SOURCES ${SRC_DIR}/test_mini_lib.c)
-set(TEST_MAIN_SOURCES ${SRC_DIR}/util.c ${SRC_DIR}/write.c ${SRC_DIR}/open.c ${SRC_DIR}/close.c ${SRC_DIR}/lseek.c ${SRC_DIR}/main.c)
+set(TEST_MAIN_SOURCES ${SRC_DIR}/util.c ${SRC_DIR}/write.c ${SRC_DIR}/open.c ${SRC_DIR}/close.c ${SRC_DIR}/lseek.c ${SRC_DIR}/mmap.c ${SRC_DIR}/main.c)
 
 
 # 编译 test_mini_lib
