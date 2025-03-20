@@ -29,3 +29,8 @@ compile_commands.json
 # 忽略构建目录
 build/
 make/
+
+# 忽略测试文件
+open.txt
+test.txt
+
